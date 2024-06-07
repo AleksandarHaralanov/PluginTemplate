@@ -8,6 +8,7 @@ repositories {
 
 dependencies {
     implementation files("libs/poseidon.jar")
+    // More potential implementations of dependencies if your plugin uses other plugins
 }
 
 jar {
