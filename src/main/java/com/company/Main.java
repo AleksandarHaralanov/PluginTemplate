@@ -1,4 +1,4 @@
-package com.example;
+package com.company;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
