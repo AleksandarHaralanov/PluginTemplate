@@ -1,11 +1,11 @@
 # PluginTemplate
 A template project to use as a base for [Poseidon](https://github.com/RhysB/Project-Poseidon), a fork of CB1060, for Minecraft b1.7.3 plugin development.
 ## Usage
-Should work on other IDEs, however, it is recommended to use IntelliJ IDEA from JetBrains.
+While the project may be compatible with other Integrated Development Environments (IDEs), it is highly recommended to use IntelliJ IDEA by JetBrains for optimal performance.
 
-You can clone it using the VCS (Version Control), by entering the GitHub repository link, when creating a new project.
+To clone the repository, utilize Version Control System (VCS) by entering the GitHub repository link when initiating a new project.
 
-It is advised that you modify the following directory with your own details:
+Please update the following directory with your specific details:
 - ```src/main/resources/plugin.yml```
 
-You may additionally modify other things as well, however, they are not required.
+Additional modifications can be made, although they are not mandatory.
