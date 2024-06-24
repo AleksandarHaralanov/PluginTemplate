@@ -1,6 +1,10 @@
 # For more configurations, visit: https://bukkit.fandom.com/wiki/Plugin_YAML
+# To learn about semantic versioning, visit: https://semver.org
+#
+# Some of these are optional, such as author, website, and description. Feel free to delete them.
 main: com.company.Main
 version: 1.0.0
 name: INSERT_NAME
-authors: [INSERT_AUTHORS]
+authors: [INSERT_AUTHOR(S)]
+website: INSERT_WEBSITE
 description: INSERT_DESCRIPTION
