@@ -1,7 +1,5 @@
 package org.example;
 
-import me.beezle.extras.UpdateUtil;
-
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 
