@@ -25,4 +25,4 @@ use IntelliJ IDEA by JetBrains for optimal performance.
 initiating a new project.
 2. After cloning, update the following directory with your specific details:
    - `Project/src/main/resources/plugin.yml`
-3. Additionally, you may use the bundled in package explained above in [Features](#Features) section.
+3. Optionally, you may use the bundled in package's features. Check **Features** header above for more information.
