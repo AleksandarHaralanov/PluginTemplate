@@ -15,9 +15,9 @@ def name = 'Plugin'
 def version = '1.0.0'
 
 if (yml) {
-    def ymlContents = yml.text
-    def nameMatcher = ymlContents =~ /name:\s*(\S+)/
-    def versionMatcher = ymlContents =~ /version:\s*([\d.]+)/
+    def ymlAttributes = yml.text
+    def nameMatcher = ymlAttributes =~ /name:\s*(\S+)/
+    def versionMatcher = ymlAttributes =~ /version:\s*([\d.]+)/
 
     if (nameMatcher) {
         name = nameMatcher[0][1]
