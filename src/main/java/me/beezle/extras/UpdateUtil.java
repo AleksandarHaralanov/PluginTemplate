@@ -13,15 +13,16 @@ public class UpdateUtil {
     /**
      * Checks for updates by querying a given URL and comparing the current version with the latest available version.
      *
-     * @param stringUrl      The URL to query for the latest release information, e.g., "https://api.github.com/repos/USER/REPO/releases/latest".
-     * @param currentVersion The current version of the plugin, e.g., "1.0.0".
      * @param pluginName     The name of the plugin, e.g., "Plugin".
+     * @param currentVersion The current version of the plugin, e.g., "1.0.0".
+     * @param apiUrl      The URL to query for the latest release information,
+     *                    e.g., "https://api.github.com/repos/USER/REPO/releases/latest".
      */
-    public static void checkForUpdates(String stringUrl, String currentVersion, String pluginName) {
+    public static void checkForUpdates(String pluginName, String currentVersion, String apiUrl) {
         currentVersion = "v" + currentVersion;
         HttpURLConnection connection = null;
         try {
-            URL url = new URL(stringUrl);
+            URL url = new URL(apiUrl);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
@@ -41,7 +42,7 @@ public class UpdateUtil {
 
             String responseBody = content.toString();
             String latestVersion = getLatestVersion(responseBody);
-            compareVersions(pluginName, currentVersion, latestVersion, stringUrl);
+            compareVersions(pluginName, currentVersion, latestVersion, apiUrl);
         } catch (IOException e) {
             getLogger().severe(String.format("[%s] IOException occurred: %s", pluginName, e.getMessage()));
         } finally {
