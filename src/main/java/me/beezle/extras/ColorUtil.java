@@ -13,7 +13,7 @@ public class ColorUtil {
         char[] charArray = textToColorize.toCharArray();
         for (int i = 0; i < charArray.length - 1; i++) {
             if (charArray[i] == colorChar && "0123456789AaBbCcDdEeFf".indexOf(charArray[i + 1]) > -1) {
-                charArray[i] = '\u00A7';  // Minecraft's color code character
+                charArray[i] = '\u00A7';
                 charArray[i + 1] = Character.toLowerCase(charArray[i + 1]);
             }
         }
