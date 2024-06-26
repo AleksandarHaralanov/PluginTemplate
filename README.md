@@ -7,7 +7,7 @@ name and version from the `plugin.yml` file, e.g., `Plugin-1.0.0.jar`.
 2. The `Main.java` class includes variables for the plugin's name and version, both sourced from the `plugin.yml` file.
 3. It also includes pre-made loggers for when the plugin is enabled and disabled, as well as methods for enabling and
 disabling the plugin.
-4. The template also includes a `me.beezle.extras` package with the following features:
+4. The template also includes a `com.haralanov.utilities` package with the following features:
    - **ColorUtil** - Allows translating alternate color codes.
    - **UpdateUtil** - Allows setting up a check for updates.
 

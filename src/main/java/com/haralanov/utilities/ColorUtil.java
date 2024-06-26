@@ -1,4 +1,4 @@
-package me.beezle.extras;
+package com.haralanov.utilities;
 
 public class ColorUtil {
 

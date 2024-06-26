@@ -1,4 +1,4 @@
-package me.beezle.extras;
+package com.haralanov.utilities;
 
 import java.io.BufferedReader;
 import java.io.IOException;
