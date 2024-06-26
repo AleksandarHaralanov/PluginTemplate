@@ -15,8 +15,8 @@ public class UpdateUtil {
      *
      * @param pluginName     The name of the plugin, e.g., "Plugin".
      * @param currentVersion The current version of the plugin, e.g., "1.0.0".
-     * @param apiUrl      The URL to query for the latest release information,
-     *                    e.g., "https://api.github.com/repos/USER/REPO/releases/latest".
+     * @param apiUrl      The URL to query for the latest release information.
+     *                    E.g., "https://api.github.com/repos/USER/REPO/releases/latest".
      */
     public static void checkForUpdates(String pluginName, String currentVersion, String apiUrl) {
         currentVersion = "v" + currentVersion;
