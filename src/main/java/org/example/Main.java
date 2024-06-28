@@ -7,14 +7,14 @@ import static org.bukkit.Bukkit.getLogger;
 
 public class Main extends JavaPlugin {
 
-    private static String currentVersion;
     private static String pluginName;
+    private static String currentVersion;
 
     @Override
     public void onEnable() {
         PluginDescriptionFile pdf = this.getDescription();
-        currentVersion = pdf.getVersion();
         pluginName = pdf.getName();
+        currentVersion = pdf.getVersion();
 
         getLogger().info(String.format("[%s] v%s Enabled.", pluginName, currentVersion));
 
