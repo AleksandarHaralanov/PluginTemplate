@@ -7,6 +7,7 @@ A template project to use as a base for [Poseidon](https://github.com/RhysB/Proj
 again.  It also includes pre-made loggers, that utilize the plugin's name and version, for when the plugin is enabled and disabled, as well as the mandatory `onEnable` and `onDisable` methods for the plugin's functionality.
    - You can use these variables to your liking. E.g., they are also used in UpdateUtil class file's methods. Check below for more info.
 3. The template also includes my own `com.haralanov.utilities` package with the following feature, as of right now:
+   - [PdfUtil](https://github.com/AleksandarHaralanov/PluginTemplate/blob/master/src/main/java/com/haralanov/utilities/PdfUtil.java) - Allows for a custom attribute `github` to be created inside the `plugin.yml` file. The attribute's value is used when utilizing the class below to set up a check for updates.
    - [UpdateUtil](https://github.com/AleksandarHaralanov/PluginTemplate/blob/master/src/main/java/com/haralanov/utilities/UpdateUtil.java) - Allows setting up a check for updates.
 
 ## Usage
