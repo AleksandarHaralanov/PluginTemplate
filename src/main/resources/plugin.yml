@@ -1,10 +1,12 @@
 # To learn about plugin YAML attributes, visit: http://wiki.bukkit.org/Plugin_YAML or https://www.spigotmc.org/wiki/plugin-yml/
 # To learn about semantic versioning, visit: https://semver.org
-#
-# Some of these are optional, such as author, website, and description. Feel free to delete them.
 main: org.example.Main
 version: 1.0.0
 name: INSERT_NAME
 author: INSERT_AUTHOR
 website: INSERT_WEBSITE
 description: INSERT_DESCRIPTION
+
+# This attribute's value is used in the PdfUtil class, which retrieves the URL for use in the UpdateUtil class or anywhere else you'd like.
+# E.g. 'https://api.github.com/repos/USER/REPO/releases/latest'.
+# github: INSERT_GITHUB_API_URL
