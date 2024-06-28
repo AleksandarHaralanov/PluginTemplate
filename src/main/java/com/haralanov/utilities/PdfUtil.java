@@ -14,8 +14,7 @@ public class PdfUtil {
 
     /**
      * Retrieves the GitHub URL from the plugin's YAML configuration file.
-     * <p>This method reads the specified YAML file and extracts the value associated with the {@code github} attribute.</p>
-     *
+     * <p><b>Warning: </b>Make sure, if you have other attributes/values containing {@code github} text within them, to put the {@code github} attribute as the first instance.</p>
      * @return The GitHub URL as a string, or {@code null} if the file is not found or an error occurs during reading.
      * <p>E.g., 'https://api.github.com/repos/USER/REPO/releases/latest'.</p>
      * <hr>
