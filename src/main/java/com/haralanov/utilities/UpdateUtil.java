@@ -24,7 +24,6 @@ public class UpdateUtil {
      *                       a new version, even when there isn't one.
      *
      */
-
     public static void checkForUpdates(String pluginName, String currentVersion, String apiUrl) {
         currentVersion = "v" + currentVersion;
         HttpURLConnection connection = null;
