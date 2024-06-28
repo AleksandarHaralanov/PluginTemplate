@@ -16,19 +16,18 @@ public class UpdateUtil {
      *
      * @param pluginName     The name of the plugin.
      * @param currentVersion The current version of the plugin.
-     * @param apiUrl         The URL to query for the latest release information.
+     * @param githubUrl      The URL to query for the latest release information.
      *                       <p>E.g., 'https://api.github.com/repos/USER/REPO/releases/latest'.</pr>
      *                       <hr>
      * <b>Note:</b> Ensure that the version attribute in your 'plugin.yml' uses only digits and dots (e.g., '1.0.0')
      *                       and does not include prefixes like 'v' or 'ver'. Otherwise, it will indicate that there is
      *                       a new version, even when there isn't one.
-     *
      */
-    public static void checkForUpdates(String pluginName, String currentVersion, String apiUrl) {
+    public static void checkForUpdates(String pluginName, String currentVersion, String githubUrl) {
         currentVersion = "v" + currentVersion;
         HttpURLConnection connection = null;
         try {
-            URL url = new URL(apiUrl);
+            URL url = new URL(githubUrl);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
@@ -49,7 +48,7 @@ public class UpdateUtil {
 
             String responseBody = content.toString();
             String latestVersion = getLatestVersion(responseBody);
-            compareVersions(pluginName, currentVersion, latestVersion, apiUrl);
+            compareVersions(pluginName, currentVersion, latestVersion, githubUrl);
         } catch (IOException e) {
             getLogger().severe(String.format("[%s] IOException occurred while checking for a new version: %s", pluginName, e.getMessage()));
         } finally {
