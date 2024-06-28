@@ -1,46 +1,57 @@
 package com.haralanov.utilities;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import org.bukkit.plugin.java.JavaPlugin;
+import java.io.InputStreamReader;
+
+import static org.bukkit.Bukkit.getLogger;
 
 public class PdfUtil {
 
-    private static Map<String, String> parseYaml(InputStream inputStream) {
-        Map<String, String> configMap = new HashMap<>();
-        try (Scanner scanner = new Scanner(inputStream)) {
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine().trim();
-                if (line.contains(":")) {
-                    String[] parts = line.split(":", 2);
-                    String key = parts[0].trim();
-                    String value = parts[1].trim().replace("\"", "");
-                    configMap.put(key, value);
-                }
-            }
-        }
-        return configMap;
-    }
+    private static final String YAML = "plugin.yml";
+    private static final String ATTRIBUTE = "github";
 
     /**
-     * This method loads the 'plugin.yml' file using the plugin's class loader and extracts the value associated
-     * with the custom 'github' attribute.
-     * <p><b>Note: </b>The 'plugin.yml' file comes with comments for the explanation. Go check it out.</p>
+     * Retrieves the GitHub URL from the plugin's YAML configuration file.
+     * <p>This method reads the specified YAML file and extracts the value associated with the {@code github} attribute.</p>
      *
-     * @param plugin The instance of the plugin. This is used to get the class loader for loading the 'plugin.yml' file.
-     * @return The GitHub URL specified in the 'plugin.yml' file, or {@code null} if the attribute is not found.
+     * @return The GitHub URL as a string, or {@code null} if the file is not found or an error occurs during reading.
+     * <p>E.g., 'https://api.github.com/repos/USER/REPO/releases/latest'.</p>
      * <hr>
-     * <b>How to initialize: </b>{@code String github = PdfUtil.getGithub(this);} inside your 'Main' class.
+     * <b>Note:</b> Ensure that the {@code plugin.yml} file is correctly placed in the {@code src/main/resources} directory
+     *             and follows the expected format.
      */
-    public static String getGithub(JavaPlugin plugin) {
-        InputStream inputStream = plugin.getClass().getClassLoader().getResourceAsStream("plugin.yml");
-        if (inputStream != null) {
-            Map<String, String> configMap = parseYaml(inputStream);
-            return configMap.get("github");
+    public static String getGithub(String NAME) {
+        try {
+            InputStream inputStream = PdfUtil.class.getClassLoader().getResourceAsStream(YAML);
+            if (inputStream == null) {
+                getLogger().severe(String.format("[%s] File not found: %s", NAME, YAML));
+                return null;
+            }
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder yamlContent = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                yamlContent.append(line).append("\n");
+            }
+
+            return parseYaml(yamlContent.toString());
+        } catch (IOException e) {
+            getLogger().severe(String.format("[%s] IOException occurred while reading %s: %s", NAME, YAML, e.getMessage()));
+            return null;
+        }
+    }
+
+    private static String parseYaml(String yamlContent) {
+        String[] lines = yamlContent.split("\n");
+        for (String line : lines) {
+            if (line.trim().startsWith(ATTRIBUTE + ":")) {
+                int index = line.indexOf(":");
+                return line.substring(index + 1).trim();
+            }
         }
         return null;
     }
-
 }

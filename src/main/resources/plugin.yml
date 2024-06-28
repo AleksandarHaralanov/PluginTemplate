@@ -7,6 +7,6 @@ author: INSERT_AUTHOR
 website: INSERT_WEBSITE
 description: INSERT_DESCRIPTION
 
-# This attribute's value is used in the PdfUtil class, which retrieves the URL for use in the UpdateUtil class or anywhere else you'd like.
-# E.g. 'https://api.github.com/repos/USER/REPO/releases/latest'.
-# github: INSERT_GITHUB_URL
+# This attribute's value is used in the PdfUtil class.
+# The class retrieves the URL for use in the UpdateUtil class or anywhere else you'd like.
+# github: https://api.github.com/repos/USER/REPO/releases/latest
