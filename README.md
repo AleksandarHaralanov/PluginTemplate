@@ -2,7 +2,7 @@
 A template project to use as a base for [Poseidon](https://github.com/RhysB/Project-Poseidon), a fork of CB1060, for Minecraft b1.7.3 plugin development.
 
 ## Features
-1. Implements a function inside [build.gradle](https://github.com/AleksandarHaralanov/PluginTemplate/blob/master/build.gradle) that names the plugin jar file after build using the plugin's name and version directly from the `plugin.yml` file.
+1. Implements a function inside [build.gradle](https://github.com/AleksandarHaralanov/PluginTemplate/blob/master/build.gradle) that names the plugin's compiled `.jar` file using the plugin's name and version directly from the `plugin.yml` file.
 2. The [Main](https://github.com/AleksandarHaralanov/PluginTemplate/blob/master/src/main/java/org/example/Main.java) class includes variables for the plugin's name and version, both sourced from the `plugin.yml` file once
 again.  It also includes pre-made loggers, that utilize the plugin's name and version, for when the plugin is enabled and disabled, as well as the mandatory `onEnable` and `onDisable` methods for the plugin's functionality.
    - You can use these variables to your liking. E.g., they are also used in UpdateUtil class file's methods. Check below for more info.
