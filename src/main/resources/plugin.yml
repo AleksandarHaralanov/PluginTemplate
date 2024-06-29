@@ -9,4 +9,4 @@ description: INSERT_DESCRIPTION
 
 # This attribute's value is used in the PdfUtil class.
 # The class retrieves the URL for use in the UpdateUtil class or anywhere else you'd like.
-# github: https://api.github.com/repos/USER/REPO/releases/latest
+# apiGithub: https://api.github.com/repos/USER/REPO/releases/latest

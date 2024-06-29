@@ -1,7 +1,5 @@
 package org.example;
 
-import com.haralanov.utilities.PdfUtil;
-
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 
